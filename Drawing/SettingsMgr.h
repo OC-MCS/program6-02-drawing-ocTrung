@@ -13,7 +13,7 @@ class SettingsMgr
 private:
 	Color colorSetting;
 	ShapeEnum shapeSetting;
-	
+
 public:
 	SettingsMgr(Color startingColor, ShapeEnum startingShape )
 	{
