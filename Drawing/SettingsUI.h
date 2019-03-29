@@ -24,6 +24,8 @@ public:
 		settingsMgr = mgr;
 
 	}
+
+	// checks for mouse position over buttons and changes color selection in settings manager
 	void handleMouseUp(Vector2f mouse)
 	{
 		if (blueBtn.getGlobalBounds().contains(mouse))
@@ -53,6 +55,8 @@ public:
 			settingsMgr->setCurShape(CIRCLE);
 		}
 	}
+
+	// draws the titles, buttons, and border in the settings window
 	void draw(RenderWindow& win)
 	{
 		// selected color title

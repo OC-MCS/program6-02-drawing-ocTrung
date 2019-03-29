@@ -1,5 +1,8 @@
 //================================================
-// YOUR NAME GOES HERE <-----------------  
+// Trung Nguyenvo
+// due: 3.29.19
+// Programming Assignment #6
+// Description: Draw
 //================================================
 #include <iostream>
 #include <fstream>
@@ -29,6 +32,15 @@ int main()
 	DrawingUI   drawingUI(Vector2f(200, 50));
 	
 	// ********* Add code here to make the managers read from shapes file (if the file exists)
+	fstream binFile;
+	binFile.open("shapes.bin", ios::in | ios::binary);
+
+	if (binFile)
+	{
+		settingsMgr.readFile(binFile);
+
+	}
+	binFile.close();
 
 	while (window.isOpen()) 
 	{
@@ -39,6 +51,9 @@ int main()
 			{
 				window.close();
 				// ****** Add code here to write all data to shapes file
+				binFile.open("shapes.bin", ios::out | ios::binary);
+				settingsMgr.writeFile(binFile);
+				binFile.close();
 			}
 			else if (event.type == Event::MouseButtonReleased)
 			{
